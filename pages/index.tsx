@@ -1,7 +1,10 @@
-import { Button, Htag, P, Tag } from '@/components'
+import { Button, Htag, P, Rating, Tag } from '@/components'
 import Head from 'next/head'
+import { useState } from 'react'
 
 export default function Home() {
+  const [rating, setRating] = useState<number>(4)
+
   return (
     <div>
       <Htag tag='h1'>Заголовок</Htag>
@@ -22,6 +25,7 @@ export default function Home() {
         Green
       </Tag>
       <Tag color='primary'>Green</Tag>
+      <Rating rating={rating} isEditable setRating={setRating} />
     </div>
   )
 }
